@@ -11,8 +11,13 @@ jobs:
     - name: Get latest code
       uses: actions/checkout@v3
 
-    - name: Use secret value
-      run: echo ${{ secrets.FTP_HOST }}
+    - name: Print secret values
+      env:
+        SECRET_ONE: ${{ secrets.FTP_HOST }}
+        SECRET_TWO: ${{ secrets.FTP_USERNAME }}
+      run: |
+        echo "Secret One: $SECRET_ONE"
+        echo "Secret Two: $SECRET_TWO"
       
     - name: Setup Node.js
       uses: actions/setup-node@v2

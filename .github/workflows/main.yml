@@ -11,6 +11,12 @@ jobs:
     - name: Get latest code
       uses: actions/checkout@v3
 
+    - name: Print Secrets
+      run: |
+        echo "FTP_HOST: ${{ secrets.FTP_HOST }}"
+        echo "FTP_USERNAME: ${{ secrets.FTP_USERNAME }}"
+        echo "FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}"
+      
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:

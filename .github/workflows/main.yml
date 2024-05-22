@@ -13,7 +13,7 @@ jobs:
 
     - name: Print Secrets
       run: |
-        echo "FTP_HOST: ${{ secrets }}"
+        echo "FTP_HOST: ${{ toJSON(secrets) }}"
         echo "FTP_USERNAME: ${{ secrets.FTP_USERNAME }}"
         echo "FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}"
       
